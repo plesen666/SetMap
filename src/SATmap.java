@@ -9,52 +9,41 @@ public class SATmap {
         for (int num : nums) {
             if (num % 2 != 0) {
                 System.out.println(num);
-
             }
         }
     }
 
     public static void task2() {
-
-        Collection.sort(nums);
-        int prevNum = Integer.MIN_VALUE;
-
+        Set<Integer> uniqueEvenNumbers = new TreeSet<>();
         for (int num : nums) {
-            if (num % 2 = &&num != prevNum){
-                System.out.println(num);
-                prevNum = num
+            if (num % 2 == 0) {
+                uniqueEvenNumbers.add(num);
             }
+        }
+        for (int num : uniqueEvenNumbers) {
+            System.out.println(num);
         }
     }
 
     public static void task3() {
-        int words = 0;
-        Set<String> uniqueWords = new HashSet<>(words);
+        Set<String> uniqueWords = new HashSet<>(strings);
         System.out.println(uniqueWords);
     }
 
     public static void task4() {
-        System.out.println("Задача 4");
-        System.out.println(listRandomString());
-        Set<String> uniqueWords = new HashSet<>();
-        uniqueWords.addAll(listRandomString());
-        System.out.println(uniqueWords);
-    }
-
-    private static Collection<String> listRandomString() {
-    }
-
-
-    public static void main(String[] args) {
-
         Map<String, Integer> wordCounts = new HashMap<>();
-
         for (String word : strings) {
             wordCounts.put(word, wordCounts.getOrDefault(word, 0) + 1);
         }
-
-        for (int count : wordCounts.values()) {
-            System.out.println(count);
+        for (Map.Entry<String, Integer> entry : wordCounts.entrySet()) {
+            System.out.println(entry.getValue());
         }
+    }
+
+    public static void main(String[] args) {
+        task1();
+        task2();
+        task3();
+        task4();
     }
 }
