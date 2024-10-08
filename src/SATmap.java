@@ -42,7 +42,6 @@ public class SATmap {
         Set<String> uniqueWords = new HashSet<>(strings);
         System.out.println(uniqueWords);
     }
-
     public static void task4(List<String> strings) {
         Map<String, Integer> wordCounts = new HashMap<>();
         for (String word : strings) {
